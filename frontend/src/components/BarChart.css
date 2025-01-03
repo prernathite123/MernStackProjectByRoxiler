@@ -1,0 +1,61 @@
+
+.bar-chart-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: #b87979;
+    border: 1px solid #ddd; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
+
+.bar-chart-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; 
+}
+
+
+.bar-chart-container p {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+
+.recharts-responsive-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; 
+}
+
+
+.recharts-tooltip-wrapper {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+    .bar-chart-container {
+        width: 95%; 
+        padding: 15px; 
+    }
+
+    .bar-chart-container h2 {
+        font-size: 20px; 
+    }
+
+    .recharts-responsive-container {
+        height: 300px; 
+    }
+}

@@ -1,0 +1,42 @@
+.statistics-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .statistics-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .statistics-boxes {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .statistics-box {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statistics-box h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .statistics-box p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
