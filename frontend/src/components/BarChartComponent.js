@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
-import './BarChart.css'; 
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
+import { useMonth } from "../context/MonthContext"; // ✅ Import context
+import "./BarChart.css";
 
-
-const BarChartComponent = ({ selectedMonth }) => {
+const BarChartComponent = () => {
+  const { selectedMonth } = useMonth();  // ✅ Use global state
   const [barChartData, setBarChartData] = useState([]);
   const [error, setError] = useState(null);
 

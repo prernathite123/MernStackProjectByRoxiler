@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useMonth } from "../context/MonthContext";  // ✅ Import context
 import "./statistics.css"; 
 
 const Statistics = () => {
+  const { selectedMonth } = useMonth();  // ✅ Use global state for month selection
   const [statistics, setStatistics] = useState({
     totalSaleAmount: 0,
     totalSoldItems: 0,
     totalNotSoldItems: 0,
   });
-  const [selectedMonth, setSelectedMonth] = useState(""); 
   const [error, setError] = useState(null);
 
-  
   useEffect(() => {
     if (selectedMonth) {
       axios
@@ -28,38 +28,9 @@ const Statistics = () => {
     }
   }, [selectedMonth]);
 
-  
-  const handleMonthChange = (event) => {
-    setSelectedMonth(event.target.value);
-  };
-
   return (
     <div className="statistics-container">
-      <h2>Statistics</h2>
-      <div className="month-filter">
-        <label htmlFor="month">Select Month:</label>
-        <select
-          id="month"
-          value={selectedMonth}
-          onChange={handleMonthChange}
-          className="month-dropdown"
-        >
-          <option value="">-- Select a Month --</option>
-          <option value="January">January</option>
-          <option value="February">February</option>
-          <option value="March">March</option>
-          <option value="April">April</option>
-          <option value="May">May</option>
-          <option value="June">June</option>
-          <option value="July">July</option>
-          <option value="August">August</option>
-          <option value="September">September</option>
-          <option value="October">October</option>
-          <option value="November">November</option>
-          <option value="December">December</option>
-        </select>
-      </div>
-      {selectedMonth && <h3>Statistics for {selectedMonth}</h3>}
+      <h2>Statistics for {selectedMonth}</h2>
       {error ? (
         <p style={{ color: "red" }}>{error}</p>
       ) : (
